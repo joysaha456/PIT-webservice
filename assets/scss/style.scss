@@ -1,0 +1,528 @@
+/**
+ * @Main scss for (Template/Project Name)
+ * @project     - Project Name
+ * @author      - 
+ * @created_by  - kawsar bin siraj
+ * @created_at  - 
+ * @modified_by -
+ */
+
+
+/* fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+// to use : font-family: 'Poppins', sans-serif;
+/* fonts import -END */
+
+
+
+
+/* reset, root */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --theme-color: #FFC545;
+    --yellow-light: #FFD475;
+    --white-color: #FFFFFF;
+    --gray-color: #FFF1D6;
+    --dark-color: #040205;
+    --container-width: 1110px;
+}
+
+.container {
+    @media (min-width:1400px) {
+        max-width: var(--container-width);
+        width: 100%;
+    }
+
+    @media (min-width:1200px) and (max-width:1400px) {
+        max-width: 992px;
+        width: 100%;
+    }
+}
+
+/* reset, root - END */
+
+
+
+
+
+
+/* helper , base classes */
+.wow {
+    visibility: hidden;
+}
+
+.shape {
+    border-top: 5px solid #FFF0CE;
+    border-radius: 20px 20px 5px 5px !important;
+}
+
+.bg-light-clr {
+    background-color: #FFF0CE;
+}
+
+.is-radius {
+    border-radius: 25px;
+}
+
+.is-radius-8 {
+    border-radius: 8px;
+}
+
+.form-control,
+.form-select,
+.form-check-input,
+.btn {
+    &:focus {
+        box-shadow: none;
+        outline: none;
+    }
+}
+
+.btn,
+.nav-link {
+    @media (max-width:576px) {
+        font-size: 14px;
+        padding: 7px 12px !important;
+    }
+}
+
+
+/* helper , base classes  - END*/
+
+
+
+
+/* pit-web-services */
+.wrapper-middle {
+    @media (min-width:1200px) {
+        min-height: calc(100vh - 220px);
+    }
+}
+
+.pit-wrapper {
+    width: 100%;
+    overflow: hidden;
+    min-height: 100vh;
+
+    &.is-bg-img__branchen {
+        height: 100%;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    &.is-bg-img__home {
+        background-repeat: no-repeat;
+        background-size: contain, cover;
+        background-position: center calc(50% - 50px), center;
+
+        @media (max-width:992px) {
+            background-size: 0, cover;
+        }
+    }
+
+    .access-panel {
+        .btn {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 26px;
+            transition: all .3s linear;
+            border: 1px solid transparent;
+
+            &:hover {
+                background-color: var(--dark-color);
+                border-color: var(--dark-color);
+                color: var(--white-color);
+            }
+
+            &.active {
+                background-color: var(--dark-color) !important;
+                color: var(--white-color) !important;
+
+                &:hover {
+                    color: #040205 !important;
+                    background-color: transparent !important;
+                    border-color: #040205 !important;
+                }
+            }
+        }
+    }
+
+    .pit-service-content {
+        .site-title {
+            font-size: 60px;
+            line-height: 1.4;
+
+            @media (max-width:1200px) {
+                font-size: calc(5vw + 18px);
+            }
+        }
+
+        .subscriber-form {
+            .form-caption {
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 30px;
+            }
+
+            form {
+                max-width: 528px;
+                width: 100%;
+
+                .form-input-group {
+                    box-shadow: 0px 15px 25px #F7B728;
+
+                    .form-control,
+                    .btn {
+                        height: 60px;
+                        box-shadow: none !important;
+                        border-color: rgba(255, 255, 255, .5);
+
+                        &::placeholder {
+                            color: var(--dark-color);
+                            font-weight: 600;
+                        }
+                    }
+
+                    .form-control {
+                        background-color: var(--gray-color) !important;
+
+                        &:focus {
+                            border-color: var(--dark-color) !important;
+                        }
+                    }
+
+                    .btn {
+                        font-size: 18px;
+                        font-weight: 600;
+                        position: absolute;
+                        right: 1px;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        height: calc(100% - 2px);
+                        transition: all 0.3s;
+
+                        &:hover {
+                            background-color: var(--dark-color) !important;
+                            color: var(--white-color) !important;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+        .service-confidence {
+            .list {
+                font-size: 18px;
+                line-height: 1.6;
+            }
+        }
+
+        .addresses-box {
+            background: #FFE19F;
+            transition: all 0.3s;
+            min-height: 170px;
+
+            .addresses-title {
+                font-weight: 600;
+                font-size: 26px;
+                line-height: 1.4;
+            }
+
+            &:hover {
+                border-top: 5px solid var(--white-color) !important;
+            }
+        }
+    }
+
+    #firmen-sidebar {
+        .btn-cart {
+            box-shadow: none !important;
+            background-color: #fff;
+
+            * {
+                transition: all .3s linear;
+            }
+
+            &:hover {
+                color: var(--theme-color) !important;
+                background-color: #000;
+
+                svg path,
+                * {
+                    fill: var(--theme-color) !important;
+                    color: var(--theme-color) !important;
+                }
+            }
+        }
+
+        .firmen-list {
+            ul {
+                li {
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 27px;
+                    transition: all 0.3s linear;
+                }
+            }
+        }
+    }
+
+
+    .copyright {
+        font-size: 14px;
+
+        .footer-menu {
+            ul {
+                li {
+                    a {
+                        line-height: 26px;
+                        transition: all 0.3s;
+
+                        &:hover {
+                            color: #ff0000 !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* pit-web-services - END */
+
+
+
+
+/* css for pit-nav-pills */
+#pit-nav-pills {
+
+    .btn {
+        &:focus {
+            box-shadow: none;
+            outline: none;
+        }
+    }
+
+    .btn-pills {
+        transition: all .3s linear;
+        font-weight: 500;
+        font-size: 20px;
+        color: var(--dark-color);
+        position: relative;
+
+        @media (max-width: 991px) {
+            font-size: 16px !important;
+        }
+
+        @media (max-width: 576px) {
+            border: 1px solid #ddd !important;
+            margin: 4px !important;
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: calc(100% - 1px);
+            width: 0;
+            height: 3px;
+            background-color: var(--dark-color);
+            transition: all 0.3s linear;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        &.active,
+        &:hover {
+            background-color: transparent;
+
+            &::before {
+                left: 0;
+                opacity: 1;
+                visibility: visible;
+                width: 100%;
+            }
+        }
+    }
+
+    .region-widget {
+        font-size: 14px;
+        line-height: 1.2;
+        transition: all .3s linear;
+        font-weight: 500;
+
+        p {
+            transition: all .4s linear;
+        }
+
+        img {
+            filter: grayscale(0);
+            transition: all .3s linear;
+        }
+
+        &:hover {
+            p {
+                color: var(--theme-color) !important;
+            }
+
+            img {
+                filter: grayscale(1);
+                transform: scale(0.9);
+            }
+
+            border-color: var(--theme-color) !important;
+        }
+    }
+
+    .entscheider-checklist {
+        .checklist-checklist-item {
+            &:last-child {
+                border-bottom: 0 !important;
+            }
+        }
+    }
+
+    .pills-content {
+        .tab-content-title {
+            line-height: 1.4;
+            font-size: 38px;
+
+            @media (max-width: 1500px) {
+                font-size: 28px;
+            }
+        }
+
+        .receive-from-us {
+            line-height: 1.6;
+        }
+
+        .benefits {
+            ul {
+                li {
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 1.4;
+                }
+            }
+        }
+    }
+
+    .inner-tab {
+        .btn-dark {
+            color: var(--dark-color) !important;
+
+            &.active,
+            &:hover {
+                box-shadow: none !important;
+                background-color: var(--dark-color) !important;
+                color: var(--white-color) !important;
+            }
+        }
+
+        .nav-link {
+            &:focus {
+                box-shadow: none !important;
+            }
+        }
+    }
+
+    .branchen-2-content {
+        --search-height: 60px;
+
+        @media (max-width:576px) {
+            --search-height: 45px;
+        }
+
+        .search-fill {
+            height: var(--search-height);
+            transition: all .3s linear;
+            border-color: var(--dark-color);
+
+            &:focus {
+                border-color: var(--theme-color) !important;
+            }
+        }
+
+        .btn {
+            height: var(--search-height);
+
+            &:hover {
+                background-color: var(--theme-color) !important;
+            }
+        }
+    }
+
+    #pills-3 {
+        .checklist-checklist-item {
+
+            &:hover {
+                .badge {
+                    background-color: var(--theme-color) !important;
+                    color: #000;
+                }
+            }
+
+            .badge {
+                min-height: 30px;
+                transition: all 0.3s linear;
+            }
+        }
+    }
+
+    #pills-4 {
+        .selection-table {
+            background-color: #EBEBEB;
+        }
+
+        table {
+            tbody {
+                border-bottom: 1px dashed #CBC9C9;
+                border-color: var(--dark-color);
+            }
+        }
+
+        .form-group {
+            .btn-dark {
+                transition: all 0.3s linear;
+                font-size: 15px;
+
+                &:hover {
+                    background-color: var(--theme-color) !important;
+                    color: var(--white-color) !important;
+                    border-color: var(--theme-color) !important;
+                }
+            }
+        }
+    }
+}
+
+.form-check {
+    .form-check-input:checked {
+        background-color: var(--dark-color);
+        border-color: var(--white-color);
+    }
+
+    .form-check-input {
+        background-color: var(--dark-color);
+        border-color: var(--white-color);
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+/* css for pit-nav-pills - END */
